@@ -24,8 +24,6 @@ else :
             if list_a[row][col] != list_b[row][col] :
                 cnt += 1
                 check(row, col)
-
-if cnt != - 1 :
-    if list_a != list_b : 
+if list_a != list_b : 
         cnt = -1
 print(cnt)
