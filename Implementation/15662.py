@@ -29,3 +29,6 @@ for i in range(t):
     ans += 1 if graph[i][0] == 1 else 0
     
 print(ans)
+
+#rotate에서 rotate(1)은 시계방향으로 회전함 [1,2,3,4] 면 [4,1,2,3]
+#rotate(-1)은 [2, 3, 4, 1]
