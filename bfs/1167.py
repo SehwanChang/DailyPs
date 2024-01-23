@@ -12,17 +12,17 @@ def bfs(start) :
     q = deque()
     q.append(start)
     visited[start] = 0
-    max_tree = [0, 0]
-    
+    max_rad = [0, 0]
+
     while q :
         t = q.popleft()
         for e, w in graph[t] :
             if visited[e] == -1 :
                 visited[e] = visited[t] + w
                 q.append(e)
-                if max_tree[0] < visited[e] :
-                    max_tree = visited[e], e
-    return max_tree
+                if max_rad[0] < visited[e] :
+                    max_rad = visited[e], e
+    return max_rad
 dist, node = bfs(1)
 dist, node = bfs(node)
 print(dist)
