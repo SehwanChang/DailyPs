@@ -13,7 +13,8 @@ def backtracking(level) :
         ans = 0
         for i in range(n - 1) :
             ans += abs(nums[arr[i]] - nums[arr[i + 1]])
-        max_ans = max(ans, max_ans)
+        max_ans = max(max_ans, ans)
+        return
     for i in range(n) :
         if not visited[i] :
             visited[i] = True
@@ -21,5 +22,6 @@ def backtracking(level) :
             backtracking(level + 1)
             visited[i] = False
             arr.pop()
+        
 backtracking(0)
 print(max_ans)
