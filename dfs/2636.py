@@ -54,3 +54,5 @@ while True :
     time += 1
 print(time)
 print(last_cheese_count)
+
+#2638번과 비교하기
