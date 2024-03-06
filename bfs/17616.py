@@ -30,3 +30,12 @@ high_rank = 1 + bfs(x , higher)
 low_rank = n - bfs(x, lower)
 
 print(high_rank, low_rank)
+
+# 5 3 1
+# 2 3
+# 3 4
+# 4 5
+
+# 1번 노드 직접적으로 달성 x : 역방향 추적.
+
+# 2 > 3 > 4 > 5 : 1 or 5 가능함.
