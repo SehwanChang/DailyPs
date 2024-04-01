@@ -8,8 +8,7 @@ for i in range(n) :
     while q and (q[-1][1] > nums[i]) :
         q.pop()
     q.append((i + 1, nums[i]))
-    #window의 길이 초과 : index의 가장 작은 원소가 창 밖에 존재 
-    if q[-1][0] - q[0][0] >= l : 
+    if q[-1][0] - q[0][0] >= l :
         q.popleft()
     print(q[0][1], end = ' ')
 # 입력 
