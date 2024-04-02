@@ -10,6 +10,7 @@ def bfs(start, graph) :
     visited = [False] * (n + 1)
     visited[start] = True
     q.append(start)
+    #시작 노드 : 계산에서 제외하려고
     rank = -1
     while q :
         cur = q.popleft()
@@ -22,11 +23,16 @@ def bfs(start, graph) :
     return rank
 
 for _ in range(m) :
-    a, b = map(int, input().split())
-    lower[a].append(b)
-    higher[b].append(a)
+    high, low = map(int, input().split())
+    # 나보다 더 잘한사람수 세기 -> 최소 랭크
+    higher[low].append(high)
+    # 나보다 더 못한사람수 세기 -> 최대 랭크
+    lower[high].append(low)
 
+# 5명중에 2명이 나보다 잘함: 나의 최소 순위 = 3위
 high_rank = 1 + bfs(x , higher)
+
+#5명중에 1명이 나보다 못한 경우 나의 최대순위 = 2위
 low_rank = n - bfs(x, lower)
 
 print(high_rank, low_rank)
