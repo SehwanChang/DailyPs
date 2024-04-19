@@ -9,8 +9,8 @@ visited[s] = True
 while q :
     x = q.popleft()
     for d in [-dist[x], dist[x]]:
-            t = x + d
-            if (0 <= t < n) and not visited[t]:
-                q.append(t)
-                visited[t] = 1
+            next = x + d
+            if (0 <= next < n) and not visited[next]:
+                q.append(next)
+                visited[next] = True
 print(visited.count(1))
