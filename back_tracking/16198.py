@@ -1,4 +1,5 @@
 import sys
+input = sys.stdin.readline
 def back_tacking(x):
     global answer
     if len(w) == 2:
@@ -12,7 +13,7 @@ def back_tacking(x):
 
 
 n = int(sys.stdin.readline())
-w = list(map(int, sys.stdin.readline().split()))
+w = list(map(int, input().split()))
 answer = 0
 back_tacking(0)
 print(answer)
