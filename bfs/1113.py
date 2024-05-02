@@ -22,15 +22,16 @@ def bfs(x, y):
         x, y = q.popleft()
         for i in range(4):
             nx, ny = x + dx[i], y + dy[i]
-            if nx in (-1, n) or ny in (-1, m):
-                return 0, 0
-            if height >= graph[nx][ny] and not visited[nx][ny]:
-                q.append((nx, ny))
-                visited[nx][ny] = True
-                mini_pool.append((nx, ny))
+            if 0 <= nx < n and 0 <= ny < m:
+                if height >= graph[nx][ny] and not visited[nx][ny]:
+                    q.append((nx, ny))
+                    visited[nx][ny] = True
+                    mini_pool.append((nx, ny))
 
-            elif height < graph[nx][ny]:
-                min_height = min(min_height, graph[nx][ny])
+                elif height < graph[nx][ny]:
+                    min_height = min(min_height, graph[nx][ny])
+            else:
+                return 0
     for pos in mini_pool:
         x, y = pos
         water += (min_height - graph[x][y])
